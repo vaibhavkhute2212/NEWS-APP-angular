@@ -7,8 +7,8 @@ import { Observable } from 'rxjs'
 })
 export class NewsapiService {
   constructor(private _http: HttpClient) { }
-  topNews = 'https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=ab3d07b079bf4bb285b22295497af4dc'
-
+  topNews = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ab3d07b079bf4bb285b22295497af4dc'
+  techNews = 'https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=ab3d07b079bf4bb285b22295497af4dc'
   topHeadlines(): Observable<any>{
 
     return this._http.get(this.topNews);
@@ -16,7 +16,7 @@ export class NewsapiService {
 
   techHeadlines(): Observable<any>{
 
-    return this._http.get(this.topNews);
+    return this._http.get(this.techNews);
   }
 
 }
